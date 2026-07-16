@@ -1,78 +1,45 @@
 'use client';
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 import { motion } from 'framer-motion';
+import { getInfluencersData } from '@/lib/api';
 import styles from './influencers.module.css';
 
-const INFLUENCERS_DATA = [
-  {
-    id: 1,
-    brand: "KIEHL'S",
-    title: "KIEHL'S Acne Liquid Patch Launch",
-    category: 'BEAUTY',
-    imageUrl: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200&auto=format&fit=crop'
-  },
-  {
-    id: 2,
-    brand: 'SUNDAYS FURNITURE',
-    title: 'Sundays Furniture Ambassador Program',
-    category: 'HOME',
-    imageUrl: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1200&auto=format&fit=crop'
-  },
-  {
-    id: 3,
-    brand: 'FARMACY',
-    title: 'Farmacy',
-    category: 'BEAUTY',
-    imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop'
-  },
-  {
-    id: 4,
-    brand: 'ALDO',
-    title: 'ALDO VIP Dressing',
-    category: 'FASHION',
-    imageUrl: 'https://images.unsplash.com/photo-1554200876-56c2f25224fa?q=80&w=1200&auto=format&fit=crop'
-  },
-  {
-    id: 5,
-    brand: "TRAVISMATHEW WOMEN'S",
-    title: "TravisMathew Women's Ojai Content Trip",
-    category: 'LIFESTYLE',
-    imageUrl: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=1200&auto=format&fit=crop'
-  },
-  {
-    id: 6,
-    brand: 'REI',
-    title: 'REI Influencer Programming',
-    category: 'ACTIVEWEAR',
-    imageUrl: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=1200&auto=format&fit=crop'
-  }
-];
-
 export default function InfluencersPage() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getInfluencersData()
+      .then(setData)
+      .catch(console.error)
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) return null;
+  if (!data) return null;
+
+  const { heroTitle, heroText, items } = data;
+
   return (
     <>
       <Navbar />
       <main className={styles.main}>
-        {/* HERO SECTION */}
         <section className={styles.heroSection}>
           <div className={styles.heroContent}>
-            <h1 className={styles.heroTitle}>Influencer Collaborations</h1>
+            <h1 className={styles.heroTitle}>{heroTitle}</h1>
             <div className={styles.heroRight}>
-              <p className={styles.heroText}>
-                We fuel brand awareness, boost conversion, and create tangible ROI by fostering authentic partnerships between influencers and brands. Because influencers are changing the way we interact with brands, you might trust a post from your favorite creator more than a celebrity commercial.
-              </p>
+              <p className={styles.heroText}>{heroText}</p>
             </div>
           </div>
         </section>
 
-        {/* CONTENT SECTION */}
         <section className={styles.contentSection}>
-          {/* GRID */}
           <div className={styles.grid}>
-            {INFLUENCERS_DATA.map((item, idx) => (
-              <motion.div 
-                key={item.id} 
+            {items.map((item, idx) => (
+              <motion.div
+                key={item.id || idx}
                 className={styles.gridItem}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -80,7 +47,6 @@ export default function InfluencersPage() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 * (idx % 2) }}
               >
                 <div className={styles.imageWrapper}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={item.imageUrl} alt={item.title} loading="lazy" decoding="async" />
                 </div>
                 <div className={styles.itemInfo}>
