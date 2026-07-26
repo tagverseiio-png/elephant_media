@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: require('path').join(__dirname, '.env') });
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -11,6 +11,8 @@ const serviceRoutes = require('./routes/services');
 const workRoutes = require('./routes/work');
 const workDetailRoutes = require('./routes/workDetail');
 const feedbackRoutes = require('./routes/feedback');
+const adminAuthRoutes = require('./routes/adminAuth');
+const adminDataRoutes = require('./routes/adminData');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -30,6 +32,10 @@ app.use('/api/services', serviceRoutes);
 app.use('/api/work', workRoutes);
 app.use('/api/work', workDetailRoutes);
 app.use('/api/feedback', feedbackRoutes);
+
+// Admin Routes
+app.use('/api/admin', adminAuthRoutes);
+app.use('/api/admin', adminDataRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

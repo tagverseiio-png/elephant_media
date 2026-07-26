@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
@@ -11,9 +11,8 @@ import styles from './page.module.css';
 export default function Home() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const heroRef = useRef(null);
+
   const { scrollYProgress } = useScroll({
-    target: heroRef,
     offset: ["start start", "end start"]
   });
 
@@ -37,7 +36,7 @@ export default function Home() {
     <>
       <Navbar isHome />
       <main className={styles.main}>
-        <section className={styles.hero} ref={heroRef}>
+        <section className={styles.hero}>
           <div className={styles.heroBackground}>
             <video autoPlay loop muted playsInline className={styles.heroVideo}>
               <source src={hero.videoUrl} type="video/mp4" />
@@ -52,7 +51,7 @@ export default function Home() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             style={{ scale: titleScale, y: titleY, opacity: titleOpacity }}
           >
-            THE ELEPHANT PRODUCTION
+            THE ELEPHANT MEDIA
           </motion.h1>
           <div className={styles.heroContent}>
             <motion.p

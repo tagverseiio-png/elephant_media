@@ -19,6 +19,7 @@ const workDetailSchema = new mongoose.Schema({
   moreWork: [
     {
       title: String,
+      slug: String,
       imageUrl: String,
     },
   ],

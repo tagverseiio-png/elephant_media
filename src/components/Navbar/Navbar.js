@@ -45,13 +45,13 @@ export default function Navbar({ isHome = false }) {
 
           <Link href="/" className={styles.logo} onClick={closeMenu}>
             <span className={`${styles.logoText} ${logoVisible ? styles.logoVisible : styles.logoHidden}`}>
-              The Elephant Production
+              The Elephant Media
             </span>
           </Link>
 
           <div className={styles.navLinksRight}>
             <Link href="/about" className={styles.navLink}>ABOUT</Link>
-            <a href="https://www.instagram.com/theelephantproduction/" target="_blank" rel="noopener noreferrer" className={styles.navLink}>INSTAGRAM</a>
+            <a href="https://www.instagram.com/theelephantmedia/" target="_blank" rel="noopener noreferrer" className={styles.navLink}>INSTAGRAM</a>
             <button 
               className={styles.navLink} 
               style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: 0 }}

@@ -72,8 +72,8 @@ async function seed() {
     ],
     instagram: {
       title: 'Follow Us',
-      handle: '@theelephantproduction',
-      handleUrl: 'https://www.instagram.com/theelephantproduction/',
+      handle: '@theelephantmedia',
+      handleUrl: 'https://www.instagram.com/theelephantmedia/',
       images: [
         'https://images.unsplash.com/photo-1554200876-56c2f25224fa?q=80&w=400&auto=format&fit=crop',
         'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=400&auto=format&fit=crop',
@@ -89,13 +89,13 @@ async function seed() {
   // ─── ABOUT ────────────────────────────────────────────
   await About.create({
     hero: {
-      label: 'About The Elephant Production',
+      label: 'About The Elephant Media',
       title: 'We create magic\nfor brands',
     },
     mission: {
       label: 'Who We Are',
       paragraphs: [
-        'The Elephant Production is an action-first creative communications agency. We increase brand visibility and awareness to attract new customers through thoughtful storytelling and distinct and adaptable communications strategies.',
+        'The Elephant Media is an action-first creative communications agency. We increase brand visibility and awareness to attract new customers through thoughtful storytelling and distinct and adaptable communications strategies.',
         'With an unmatched consumer understanding and a true collaborative spirit, we create magic for brands by bringing their authenticity and differentiated perspective to the forefront. Our team brings decades of combined experience across media, fashion, lifestyle, and consumer brands.',
       ],
     },
@@ -130,7 +130,7 @@ async function seed() {
       { name: 'Digital Strategist', role: 'Digital', gradient: 'linear-gradient(135deg, #e0d5c7, #c4a882)' },
     ],
     testimonial: {
-      quote: 'The Elephant Production has been a transformative partner for our brand. Their strategic vision combined with flawless execution has elevated our presence in ways we never thought possible.',
+      quote: 'The Elephant Media has been a transformative partner for our brand. Their strategic vision combined with flawless execution has elevated our presence in ways we never thought possible.',
       authorName: 'Brand Partner',
       authorRole: 'Fortune 500 Company',
     },
@@ -236,7 +236,7 @@ async function seed() {
     ],
     cta: {
       title: 'Ready to create\nsomething extraordinary?',
-      email: 'info@theelephantproduction.com',
+      email: 'info@theelephantmedia.com',
       btnText: 'Get In Touch',
     },
   });
@@ -266,7 +266,7 @@ async function seed() {
   });
   console.log('Seeded Work');
 
-  // ─── WORK DETAIL: Lacoste ─────────────────────────────
+  // ─── WORK DETAILS ─────────────────────────────
   await WorkDetail.create({
     slug: 'lacoste',
     clientName: 'Lacoste',
@@ -304,13 +304,328 @@ async function seed() {
       ],
     },
     moreWork: [
-      { title: 'Outdoor Voices', imageUrl: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=400&auto=format&fit=crop' },
-      { title: 'Paravel', imageUrl: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=400&auto=format&fit=crop' },
-      { title: 'Sweetgreen', imageUrl: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Kosas', slug: 'kosas', imageUrl: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Sakara Life', slug: 'sakara-life', imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Away', slug: 'away', imageUrl: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=400&auto=format&fit=crop' },
     ],
     ctaTitle: "Interested in our work?\nLet's talk.",
   });
   console.log('Seeded WorkDetail: lacoste');
+
+  await WorkDetail.create({
+    slug: 'kosas',
+    clientName: 'Kosas',
+    title: 'Clean beauty meets cultural relevance — the Kosas brand evolution',
+    services: ['Influencer Strategy', 'Content Creation', 'Social Media'],
+    visitUrl: '#',
+    images: {
+      gridFull: [
+        'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop',
+      ],
+      gridHalf: [
+        'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1599305090598-fe179d501227?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=600&auto=format&fit=crop',
+      ],
+    },
+    socialImages: [
+      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=400&auto=format&fit=crop',
+    ],
+    eventSeries: {
+      title: 'Clean beauty influencer immersion',
+      paragraphs: [
+        'We orchestrated an immersive influencer retreat that introduced Kosas\' expanded product line to key beauty voices across the country.',
+        'The result was 50+ pieces of organic content, a 300% increase in social mentions, and a measurable lift in direct-to-consumer sales during the campaign window.',
+      ],
+      images: [
+        'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1526947425960-945c6e72858f?q=80&w=800&auto=format&fit=crop',
+      ],
+    },
+    moreWork: [
+      { title: 'Lacoste', slug: 'lacoste', imageUrl: 'https://images.unsplash.com/photo-1554200876-56c2f25224fa?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Sakara Life', slug: 'sakara-life', imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Away', slug: 'away', imageUrl: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=400&auto=format&fit=crop' },
+    ],
+    ctaTitle: "Interested in our work?\nLet's talk.",
+  });
+  console.log('Seeded WorkDetail: kosas');
+
+  await WorkDetail.create({
+    slug: 'sakara-life',
+    clientName: 'Sakara Life',
+    title: 'Wellness redefined — scaling Sakara Life through strategic partnerships',
+    services: ['Brand Partnerships', 'Event Production', 'Content Strategy'],
+    visitUrl: '#',
+    images: {
+      gridFull: [
+        'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1200&auto=format&fit=crop',
+      ],
+      gridHalf: [
+        'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=600&auto=format&fit=crop',
+      ],
+    },
+    socialImages: [
+      'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=400&auto=format&fit=crop',
+    ],
+    eventSeries: {
+      title: 'Mindful living brand summit',
+      paragraphs: [
+        'We produced a multi-day wellness summit that brought together Sakara Life\'s top partners, influencers, and customers for an immersive brand experience.',
+        'The event generated significant press coverage and deepened Sakara Life\'s position as a leader in the functional wellness space.',
+      ],
+      images: [
+        'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=800&auto=format&fit=crop',
+      ],
+    },
+    moreWork: [
+      { title: 'Kosas', slug: 'kosas', imageUrl: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Lacoste', slug: 'lacoste', imageUrl: 'https://images.unsplash.com/photo-1554200876-56c2f25224fa?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Pressed', slug: 'pressed', imageUrl: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=400&auto=format&fit=crop' },
+    ],
+    ctaTitle: "Interested in our work?\nLet's talk.",
+  });
+  console.log('Seeded WorkDetail: sakara-life');
+
+  await WorkDetail.create({
+    slug: 'away',
+    clientName: 'Away',
+    title: 'Travel reimagined — the Away brand lifestyle campaign',
+    services: ['Creative Direction', 'Photography & Video', 'Social Media'],
+    visitUrl: '#',
+    images: {
+      gridFull: [
+        'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1200&auto=format&fit=crop',
+      ],
+      gridHalf: [
+        'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=crop',
+      ],
+    },
+    socialImages: [
+      'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=400&auto=format&fit=crop',
+    ],
+    eventSeries: {
+      title: 'The art of modern travel',
+      paragraphs: [
+        'We partnered with Away to create a lifestyle campaign that captures the spirit of modern travel — effortless, intentional, and beautifully designed.',
+        'The campaign featured destination shoots, influencer integrations, and a social-first content strategy that drove record engagement across platforms.',
+      ],
+      images: [
+        'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?q=80&w=800&auto=format&fit=crop',
+      ],
+    },
+    moreWork: [
+      { title: 'Our Place', slug: 'our-place', imageUrl: 'https://images.unsplash.com/photo-1584990347449-a6ebbb56e297?q=80&w=400&auto=format&fit=crop' },
+      { title: 'HOKA', slug: 'hoka', imageUrl: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Vuori', slug: 'vuori', imageUrl: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=400&auto=format&fit=crop' },
+    ],
+    ctaTitle: "Interested in our work?\nLet's talk.",
+  });
+  console.log('Seeded WorkDetail: away');
+
+  await WorkDetail.create({
+    slug: 'pressed',
+    clientName: 'Pressed',
+    title: 'Pressed — refreshing a beloved brand for a new generation',
+    services: ['Brand Strategy', 'Creative Direction', 'Content Production'],
+    visitUrl: '#',
+    images: {
+      gridFull: [
+        'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=1200&auto=format&fit=crop',
+      ],
+      gridHalf: [
+        'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?q=80&w=600&auto=format&fit=crop',
+      ],
+    },
+    socialImages: [
+      'https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?q=80&w=400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?q=80&w=400&auto=format&fit=crop',
+    ],
+    eventSeries: {
+      title: 'Juice bar reimagined launch',
+      paragraphs: [
+        'Pressed came to us to refresh their brand identity and launch a new product line aimed at health-conscious millennials and Gen Z consumers.',
+        'We developed a vibrant campaign that included a pop-up juice bar activation in SoHo, influencer seeding kits, and a social media strategy that drove 2M+ impressions in the first week.',
+      ],
+      images: [
+        'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?q=80&w=800&auto=format&fit=crop',
+      ],
+    },
+    moreWork: [
+      { title: 'Sakara Life', slug: 'sakara-life', imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Our Place', slug: 'our-place', imageUrl: 'https://images.unsplash.com/photo-1584990347449-a6ebbb56e297?q=80&w=400&auto=format&fit=crop' },
+      { title: 'HOKA', slug: 'hoka', imageUrl: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=400&auto=format&fit=crop' },
+    ],
+    ctaTitle: "Interested in our work?\nLet's talk.",
+  });
+  console.log('Seeded WorkDetail: pressed');
+
+  await WorkDetail.create({
+    slug: 'our-place',
+    clientName: 'Our Place',
+    title: 'Home is where the brand is — Our Place campaign evolution',
+    services: ['Creative Direction', 'Photography', 'Influencer Partnerships'],
+    visitUrl: '#',
+    images: {
+      gridFull: [
+        'https://images.unsplash.com/photo-1584990347449-a6ebbb56e297?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1200&auto=format&fit=crop',
+      ],
+      gridHalf: [
+        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1584990347449-a6ebbb56e297?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=600&auto=format&fit=crop',
+      ],
+    },
+    socialImages: [
+      'https://images.unsplash.com/photo-1584990347449-a6ebbb56e297?q=80&w=400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=400&auto=format&fit=crop',
+    ],
+    eventSeries: {
+      title: 'Always Home brand platform',
+      paragraphs: [
+        'We developed the "Always Home" brand platform for Our Place, creating a comprehensive campaign that celebrated the ritual of cooking and gathering.',
+        'The campaign included lifestyle photography, video content, influencer collaborations, and a series of intimate dinner events hosted by notable chefs and creators.',
+      ],
+      images: [
+        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1460899960812-f6ee1ecaf35b?q=80&w=800&auto=format&fit=crop',
+      ],
+    },
+    moreWork: [
+      { title: 'Away', slug: 'away', imageUrl: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Pressed', slug: 'pressed', imageUrl: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Vuori', slug: 'vuori', imageUrl: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=400&auto=format&fit=crop' },
+    ],
+    ctaTitle: "Interested in our work?\nLet's talk.",
+  });
+  console.log('Seeded WorkDetail: our-place');
+
+  await WorkDetail.create({
+    slug: 'hoka',
+    clientName: 'HOKA',
+    title: 'HOKA — running culture amplified through community and content',
+    services: ['Content Production', 'Event Production', 'Athlete Partnerships'],
+    visitUrl: '#',
+    images: {
+      gridFull: [
+        'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1200&auto=format&fit=crop',
+      ],
+      gridHalf: [
+        'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1579126038374-6064e9370f0f?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1461896836934-bd45ba8fcf8b?q=80&w=600&auto=format&fit=crop',
+      ],
+    },
+    socialImages: [
+      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1461896836934-bd45ba8fcf8b?q=80&w=400&auto=format&fit=crop',
+    ],
+    eventSeries: {
+      title: 'Fly Human Fly event series',
+      paragraphs: [
+        'We created a community-driven event series for HOKA that brought together runners of all levels for guided runs, product trials, and brand experiences in major markets.',
+        'The program built authentic grassroots momentum and positioned HOKA as the brand that truly understands running culture.',
+      ],
+      images: [
+        'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1579126038374-6064e9370f0f?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1461896836934-bd45ba8fcf8b?q=80&w=800&auto=format&fit=crop',
+      ],
+    },
+    moreWork: [
+      { title: 'Vuori', slug: 'vuori', imageUrl: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Away', slug: 'away', imageUrl: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Lacoste', slug: 'lacoste', imageUrl: 'https://images.unsplash.com/photo-1554200876-56c2f25224fa?q=80&w=400&auto=format&fit=crop' },
+    ],
+    ctaTitle: "Interested in our work?\nLet's talk.",
+  });
+  console.log('Seeded WorkDetail: hoka');
+
+  await WorkDetail.create({
+    slug: 'vuori',
+    clientName: 'Vuori',
+    title: 'Vuori — performance meets lifestyle in the activewear revolution',
+    services: ['Creative Direction', 'Photography & Video', 'Influencer Strategy'],
+    visitUrl: '#',
+    images: {
+      gridFull: [
+        'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1200&auto=format&fit=crop',
+      ],
+      gridHalf: [
+        'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1562184552-e1a3e1e5a5b7?q=80&w=600&auto=format&fit=crop',
+      ],
+    },
+    socialImages: [
+      'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=400&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=400&auto=format&fit=crop',
+    ],
+    eventSeries: {
+      title: 'California activewear lifestyle campaign',
+      paragraphs: [
+        'We partnered with Vuori to create a lifestyle campaign that captures the intersection of performance and everyday comfort — the essence of the California activewear aesthetic.',
+        'The campaign featured coastal lifestyle shoots, fitness influencer integrations, and a social strategy that showcased Vuori as the go-to brand for the modern active lifestyle.',
+      ],
+      images: [
+        'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1562184552-e1a3e1e5a5b7?q=80&w=800&auto=format&fit=crop',
+      ],
+    },
+    moreWork: [
+      { title: 'HOKA', slug: 'hoka', imageUrl: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Away', slug: 'away', imageUrl: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=400&auto=format&fit=crop' },
+      { title: 'Our Place', slug: 'our-place', imageUrl: 'https://images.unsplash.com/photo-1584990347449-a6ebbb56e297?q=80&w=400&auto=format&fit=crop' },
+    ],
+    ctaTitle: "Interested in our work?\nLet's talk.",
+  });
+  console.log('Seeded WorkDetail: vuori');
 
   console.log('\n✅ Seed complete!');
   await mongoose.disconnect();
